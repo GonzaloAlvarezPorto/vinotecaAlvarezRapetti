@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const BarraMenu = () => {
+export const NavBar = () => {
     return (
         <nav className='cabecera__contenedorListado'>
             <ul className='contenedorListado__listado'>

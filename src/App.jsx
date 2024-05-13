@@ -1,5 +1,5 @@
 import { Header } from './components/header/Header';
-import { ListConteiner } from './components/ListConteiner';
+import { ItemListConteiner } from './components/ItemListConteiner';
 import './css/main.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <ListConteiner />
+      <ItemListConteiner />
     </>
   )
 }
