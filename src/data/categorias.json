@@ -1,0 +1,18 @@
+[
+    {
+        "id": "tintos",
+        "nombre": "Tintos"
+    },
+    {
+        "id": "blancos",
+        "nombre": "Blancos"
+    },
+    {
+        "id": "espumantes",
+        "nombre": "Espumantes"
+    },
+    {
+        "id":"rosados",
+        "nombre":"Rosados"
+    }
+]
