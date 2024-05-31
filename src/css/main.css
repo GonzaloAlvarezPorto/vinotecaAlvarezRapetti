@@ -58,6 +58,16 @@
     flex-direction: column;
     background-color: rgb(43, 43, 43);
 
+    .cuerpoPrincipal__enlaceRetorno{
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 26px 2rem 0 2rem;
+        color: white;
+    }
+
     .cuerpoPrincipal__contenedorProductos {
         display: flex;
         flex-direction: row;
@@ -122,7 +132,7 @@
             .fichaProducto__masDetalles {
                 text-align: center;
                 padding: 0.5rem;
-                margin-bottom: 0.5rem;
+                margin: 1rem 0 0.5rem 0;
                 align-self: center;
                 border: 1px solid;
                 background-color: rgb(100, 100, 100);
