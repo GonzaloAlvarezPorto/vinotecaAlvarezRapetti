@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import data from "../../data/productos.json"
+import { CartContext } from '../../context/CartContext';
 
 export const ItemDetail = () => {
+
+    const {agregarAlCarrito} = useContext(CartContext);
 
     let [producto, setProducto] = useState(undefined);
     let { itemId } = useParams();
@@ -19,6 +22,7 @@ export const ItemDetail = () => {
                     <h1 className='fichaProducto__titulo'>{producto ? producto.nombre : "Cargando catálogo..."}</h1>
                     <img src={producto ? producto.imagen : "Cargando imagen..."} alt="" className="fichaProducto__imagen" />
                     <p className="fichaProducto__descripcion">{producto ? producto.descripcion : "Cargando catálogo..."}</p>
+                    <button onClick={() => agregarAlCarrito(producto)} className='fichaProducto__botonAgregar'>Agregar</button>
                 </div>
             </div>
         </div>

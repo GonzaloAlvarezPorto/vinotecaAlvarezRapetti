@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import data from "../../data/productos.json"
 import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
@@ -13,6 +13,6 @@ export const ItemDetailContainter = () => {
     }, [itemId])
 
     return (
-        <ItemDetail producto={producto} />
+        <div>{producto ? <ItemDetail producto={producto} />: "Cargando..."}</div>
     )
 }
