@@ -8,13 +8,13 @@ export const NavBar = () => {
         <nav className='cabecera__contenedorListado'>
             <ul className='contenedorListado__listado'>
                 <li className='listado__items'>
-                    <NavLink to="/" className='items__enlace'>Inicio</NavLink>
+                    <NavLink to="/" activeclassname="active" className='items__enlace'>Inicio</NavLink>
                 </li>
                 {
                     categories.map((category) => {
                         return(
                             <li className='listado__items' key={category.id}>
-                            <NavLink to={`/category/${category.id}`} className='items__enlace'>
+                            <NavLink to={`/category/${category.id}`} activeclassname="active" className='items__enlace'>
                                 {category.nombre}
                             </NavLink>
                         </li> 

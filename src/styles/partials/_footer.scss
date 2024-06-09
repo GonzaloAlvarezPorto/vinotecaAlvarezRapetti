@@ -1,0 +1,45 @@
+.pieDePagina {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .pieDePagina__contenedorRedes {
+        color: white;
+        background-color: rgb(34, 34, 34);
+        padding: 0.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .contenedorRedes__paqueteRedes{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            .paqueteRedes__logo {
+                height: 15px;
+                background-color: rgb(153,153,153);
+                border-radius: 100px;
+                margin-right: 10px;
+            }
+
+            .paqueteRedes__texto{
+                font-size: 12px;
+                color: rgb(153,153,153);
+
+                &:hover{
+                    color: rgb(201, 201, 201);
+                }
+            }
+        }
+    }
+
+    .pieDePagina__derechos {
+        display: flex;
+        color: white;
+        padding: 1rem 4rem;
+        align-items: center;
+        font-size: 12px;
+    }
+}

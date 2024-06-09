@@ -1,0 +1,48 @@
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background-color: black;
+    align-items: center;
+    flex-direction: row;
+
+    .cabecera__logo {
+        height: 70px;
+        transition: 0.5s ease-out;
+        border: solid 1px rgb(177, 154, 25);
+        display: flex;
+        margin: 5px 0;
+
+        &:hover {
+            height: 100px;
+            transition: 0.5s ease-in;
+        }
+    }
+
+    .cabecera__carrito {
+        color: white;
+        text-decoration: none;
+    }
+
+    .cabecera__contenedorListado {
+        display: flex;
+
+        .contenedorListado__listado {
+            display: flex;
+
+            .listado__items {
+                display: flex;
+                padding: 1rem;
+
+                .items__enlace {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                .active {
+                    color: rgb(177, 154, 25);
+                }
+            }
+        }
+    }
+}

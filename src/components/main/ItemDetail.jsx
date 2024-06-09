@@ -22,7 +22,7 @@ export const ItemDetail = () => {
                     <h1 className='fichaProducto__titulo'>{producto ? producto.nombre : "Cargando catálogo..."}</h1>
                     <img src={producto ? producto.imagen : "Cargando imagen..."} alt="" className="fichaProducto__imagen" />
                     <p className="fichaProducto__descripcion">{producto ? producto.descripcion : "Cargando catálogo..."}</p>
-                    <button onClick={() => agregarAlCarrito(producto)} className='fichaProducto__botonAgregar'>Agregar</button>
+                    <button onClick={() => agregarAlCarrito(producto)} className='fichaProducto__boton'>Agregar</button>
                 </div>
             </div>
         </div>
