@@ -13,7 +13,7 @@ export const Item = ({ producto }) => {
         (<div className='contenedorProductos__fichaProducto'>
             <h1 className='fichaProducto__titulo'>{producto.nombre}
                 <Link className='fichaProducto__masDetalles' to={`/item/${producto.id}`}>
-                    <img src='/src/assets/masInfo.png' alt="masInfo" className='fichaProducto__masDetallesImagen' />
+                    <img src='/img/masInfo.png' alt="masInfo" className='fichaProducto__masDetallesImagen' />
                 </Link>
             </h1>
             <img src={producto.imagen} alt="" className="fichaProducto__imagen" />

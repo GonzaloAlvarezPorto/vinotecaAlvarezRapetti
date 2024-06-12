@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import data from "../../data/productos.json"
 import { CartContext } from '../../context/CartContext';
+import { db } from '../../firebase/config';
+import { doc, getDoc } from 'firebase/firestore';
 
 export const ItemDetail = () => {
 
@@ -11,8 +12,14 @@ export const ItemDetail = () => {
     let { itemId } = useParams();
 
     useEffect(() => {
-        setProducto(data.find((prod) => prod.id === parseInt(itemId)));
-    }, [itemId])
+
+        const docRef = doc(db, "productos", itemId);
+        getDoc(docRef)
+            .then(res => {
+                setProducto({ ...res.data(), id: res.id })
+            })
+    }, [itemId]);
+
 
     return (
         <div className='cuerpoPrincipal'>

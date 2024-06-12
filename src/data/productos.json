@@ -3,8 +3,11 @@
         "id": 1,
         "nombre": "Vino Tinto Reserva",
         "precio": 250,
-        "imagen": "/src/assets/tintoReserva.png",
-        "descripcion": "Vino tinto reserva con cuerpo robusto y aromas a frutas maduras y roble. Perfecto para maridar con carnes rojas.",
+        "imagen": "/img/tintoReserva.png",
+        "descripcion": "Vino tinto reserva 
+        con cuerpo robusto y aromas a 
+        frutas maduras y roble. 
+        Perfecto para maridar con carnes rojas.",
         "categoria":{
             "id": "tintos",
             "nombre": "Tintos"
@@ -15,7 +18,7 @@
         "id": 2,
         "nombre": "Vino Blanco Chardonnay",
         "precio": 800,
-        "imagen": "/src/assets/blancoChardonnay.png",
+        "imagen": "/img/blancoChardonnay.png",
         "descripcion": "Vino blanco Chardonnay con notas a manzana verde y cítricos. Ideal para acompañar pescados y mariscos.",
         "categoria":{
             "id": "blancos",
@@ -26,7 +29,7 @@
         "id": 3,
         "nombre": "Vino Rosado",
         "precio": 450,
-        "imagen": "/src/assets/vinoRosado.png",
+        "imagen": "/img/vinoRosado.png",
         "descripcion": "Vino rosado fresco y afrutado, con aromas a fresas y flores. Perfecto para disfrutar en días cálidos.",
         "categoria":{
             "id": "rosados",
@@ -37,7 +40,7 @@
         "id": 4,
         "nombre": "Champagne Brut",
         "precio": 600,
-        "imagen": "/src/assets/champagneBrut.png",
+        "imagen": "/img/champagneBrut.png",
         "descripcion": "Champagne brut elegante con burbujas finas y persistentes, y un sabor delicado a manzanas y almendras.",
         "categoria":{
             "id": "espumantes",
@@ -48,7 +51,7 @@
         "id": 5,
         "nombre": "Vino Tinto Gran Reserva",
         "precio": 1200,
-        "imagen": "/src/assets/granReserva.png",
+        "imagen": "/img/granReserva.png",
         "descripcion": "Vino tinto gran reserva envejecido en barricas de roble, con notas complejas de chocolate, vainilla y frutas negras.",
         "categoria":{
             "id": "tintos",
@@ -59,7 +62,7 @@
         "id": 6,
         "nombre": "Vino Blanco Sauvignon Blanc",
         "precio": 300,
-        "imagen": "/src/assets/sauvignonBlanc.png",
+        "imagen": "/img/sauvignonBlanc.png",
         "descripcion": "Vino blanco Sauvignon Blanc con un carácter fresco y vibrante, y notas de hierbas y frutas tropicales.",
         "categoria":{
             "id": "blancos",
@@ -70,7 +73,7 @@
         "id": 7,
         "nombre": "Vino Tinto Merlot",
         "precio": 900,
-        "imagen": "/src/assets/tintoMerlot.png",
+        "imagen": "/img/tintoMerlot.png",
         "descripcion": "Vino tinto Merlot suave y afrutado, con taninos sedosos y un final persistente. Ideal para maridar con quesos y embutidos.",
         "categoria":{
             "id": "tintos",
@@ -81,7 +84,7 @@
         "id": 8,
         "nombre": "Vino Espumoso Rosé",
         "precio": 350,
-        "imagen": "/src/assets/espumosoRose.png",
+        "imagen": "/img/espumosoRose.png",
         "descripcion": "Vino espumoso rosé con burbujas finas y sabores a frutos rojos y cítricos. Perfecto para celebraciones.",
         "categoria":{
             "id": "espumantes",
@@ -92,7 +95,7 @@
         "id": 9,
         "nombre": "Vino Blanco Riesling",
         "precio": 500,
-        "imagen": "/src/assets/blancoRiesling.png",
+        "imagen": "/img/blancoRiesling.png",
         "descripcion": "Vino blanco Riesling con un equilibrio perfecto entre dulzor y acidez, y aromas a melocotón y flores blancas.",
         "categoria":{
             "id": "blancos",
@@ -103,7 +106,7 @@
         "id": 10,
         "nombre": "Vino Tinto Cabernet Sauvignon",
         "precio": 700,
-        "imagen": "/src/assets/cabernetSauvignon.png",
+        "imagen": "/img/cabernetSauvignon.png",
         "descripcion": "Vino tinto Cabernet Sauvignon con cuerpo completo y notas a grosellas negras, tabaco y especias. Ideal para carnes asadas.",
         "categoria":{
             "id": "tintos",
