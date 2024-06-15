@@ -4,10 +4,7 @@
         "nombre": "Vino Tinto Reserva",
         "precio": 250,
         "imagen": "/img/tintoReserva.png",
-        "descripcion": "Vino tinto reserva 
-        con cuerpo robusto y aromas a 
-        frutas maduras y roble. 
-        Perfecto para maridar con carnes rojas.",
+        "descripcion": "Vino tinto reserva con cuerpo robusto y aromas a frutas maduras y roble. Perfecto para maridar con carnes rojas.",
         "categoria":{
             "id": "tintos",
             "nombre": "Tintos"

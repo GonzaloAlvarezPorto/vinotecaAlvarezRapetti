@@ -9,17 +9,28 @@ export const ItemDetailContainter = () => {
     let { itemId } = useParams();
     let [producto, setProducto] = useState(undefined);
 
+    let [cargando, setCargando] = useState(true);
+
     useEffect(() => {
 
         const docRef = doc(db, "productos", itemId);
         getDoc(docRef)
             .then(res => {
-                setProducto({ ...res.data(), id: res.id });
+                if (res.data()) {
+                    setProducto({ ...res.data(), id: res.id });
+                }
+                setCargando(false);
             })
 
     }, [itemId]);
 
-    return (
-        <div>{producto ? <ItemDetail producto={producto} /> : "Cargando..."}</div>
-    )
+    if (cargando) {
+        return <div>"Cargando..."</div>
+    }
+    else if (producto){
+        return <ItemDetail producto={producto} /> 
+    }
+    else {
+        return <div>Producto no encontrado</div>
+    }
 }
