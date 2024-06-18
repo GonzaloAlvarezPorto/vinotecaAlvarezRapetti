@@ -5,6 +5,12 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
 
+    const primeraEnMayuscula = (texto) => {
+        return texto.split(' ').map(palabra => {
+            return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+        }).join(' ');
+    }
+
     const agregarAlCarrito = (producto, numero, setCantidad) => {
         setCarrito(prevCarrito => {
             const productoExistente = prevCarrito.find(item => item.nombre === producto.nombre);
@@ -66,7 +72,7 @@ export const CartProvider = ({ children }) => {
 
     return (
         <CartContext.Provider value={{ carrito, agregarAlCarrito, calcularCantidad, calcularTotal, 
-        vaciarCarrito, quitarDelCarrito, incrementarCantidad, decrementarCantidad, eliminarDelCarrito }}>
+        vaciarCarrito, quitarDelCarrito, incrementarCantidad, decrementarCantidad, eliminarDelCarrito, primeraEnMayuscula }}>
             {children}
         </CartContext.Provider>
     )

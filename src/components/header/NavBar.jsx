@@ -34,6 +34,9 @@ export const NavBar = () => {
                         )
                     })
                 }
+                <li className='listado__items'>
+                    <NavLink to="/cargar-productos" activeclassname="active" className='items__enlace oculto'>Cargar Productos</NavLink>
+                </li>
             </ul>
         </nav>
     )

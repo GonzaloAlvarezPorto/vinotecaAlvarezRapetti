@@ -6,6 +6,15 @@
     align-items: center;
     flex-direction: row;
 
+    .cabecera__logueo{
+        display: flex;
+
+        .logueo__enlace{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
     .cabecera__logo {
         height: 70px;
         transition: 0.5s ease-out;
@@ -32,11 +41,21 @@
 
             .listado__items {
                 display: flex;
-                padding: 1rem;
 
                 .items__enlace {
                     color: white;
                     text-decoration: none;
+                    padding: 1rem;
+                }
+
+                .oculto{
+                    display: none;
+                    padding: 0;
+                }
+                
+                .visible{
+                    display: flex;
+                    padding: 1rem;
                 }
 
                 .active {

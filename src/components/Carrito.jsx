@@ -26,7 +26,7 @@ export const Carrito = () => {
                             <div className='contenedorProductos__resumen'>
                                 <h2 className='resumen__titulo'>Total: ${calcularTotal()}</h2>
                                 <button className="resumen__boton" onClick={vaciarCarrito}>Vaciar carrito</button>
-                                <Link to="/finalizar-compra">Finalizar compra</Link>
+                                <Link to="/finalizar-compra" className='resumen__boton'><button className='boton__boton'>Finalizar compra</button></Link>
                             </div>
                         </> :
                         <div className='contenedorProductos__resumen'>

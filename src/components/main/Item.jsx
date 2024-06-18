@@ -4,7 +4,7 @@ import { CartContext } from '../../context/CartContext'
 
 export const Item = ({ producto }) => {
 
-    const { agregarAlCarrito, incrementarCantidad, decrementarCantidad } = useContext(CartContext);
+    const { agregarAlCarrito, incrementarCantidad, decrementarCantidad, mensajeEmergente } = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(1);
 
