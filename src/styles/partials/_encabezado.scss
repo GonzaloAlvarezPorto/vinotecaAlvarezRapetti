@@ -21,11 +21,6 @@
         border: solid 1px rgb(177, 154, 25);
         display: flex;
         margin: 5px 0;
-
-        &:hover {
-            height: 100px;
-            transition: 0.5s ease-in;
-        }
     }
 
     .cabecera__carrito {
