@@ -9,9 +9,6 @@ import { CartProvider } from './context/CartContext';
 import { Carrito } from './components/Carrito';
 import { Checkout } from './components/header/Checkout';
 import { CargarProductos } from './components/CargarProductos';
-import { Login } from './components/header/Login';
-import { Usuario } from './components/header/Usuario';
-
 
 function App() {
 
@@ -26,9 +23,8 @@ function App() {
           <Route path="/carrito" element={<Carrito />} />
           <Route path='/finalizar-compra' element={<Checkout/>}/>
           <Route path='/cargar-productos' element={<CargarProductos/>}/>
-          <Route path='/login' element={<Usuario/>}/>
           <Route path='/*' element={<NotFound />} />
-        </Routes>
+          </Routes>
         <Footer />
       </BrowserRouter>
     </CartProvider>

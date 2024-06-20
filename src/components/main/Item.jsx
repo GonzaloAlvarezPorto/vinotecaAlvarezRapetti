@@ -8,7 +8,6 @@ export const Item = ({ producto }) => {
 
     const [cantidad, setCantidad] = useState(1);
 
-
     return (
         (<div className='contenedorProductos__fichaProducto'>
             <h1 className='fichaProducto__titulo'>{producto.nombre}

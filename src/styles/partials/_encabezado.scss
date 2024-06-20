@@ -6,15 +6,6 @@
     align-items: center;
     flex-direction: row;
 
-    .cabecera__logueo{
-        display: flex;
-
-        .logueo__enlace{
-            text-decoration: none;
-            color: white;
-        }
-    }
-
     .cabecera__logo {
         height: 70px;
         transition: 0.5s ease-out;

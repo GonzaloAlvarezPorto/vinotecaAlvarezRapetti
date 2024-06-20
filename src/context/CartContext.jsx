@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
@@ -15,16 +16,36 @@ export const CartProvider = ({ children }) => {
         setCarrito(prevCarrito => {
             const productoExistente = prevCarrito.find(item => item.nombre === producto.nombre);
             if (productoExistente) {
-                return prevCarrito.map(item =>
+                const nuevoCarrito = prevCarrito.map(item =>
                     item.nombre === producto.nombre
                         ? { ...item, cantidad: item.cantidad + numero }
                         : item
                 );
+                mostrarToast(`${numero} ${producto.nombre}(s) se agregaron al carrito.`, 'success');
+                return nuevoCarrito;
             } else {
-                return [...prevCarrito, { ...producto, cantidad: numero }];
+                const nuevoProducto = { ...producto, cantidad: numero };
+                mostrarToast(`${numero} ${producto.nombre}(s) se agregaron al carrito.`, 'success');
+                return [...prevCarrito, nuevoProducto];
             }
         });
         setCantidad(1);
+    };
+
+    const mostrarToast = (mensaje, icono) => {
+        Swal.fire({
+            icon: icono,
+            title: mensaje,
+            toast: true,
+            position: 'bottom-start',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: toast => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        });
     };
 
     const quitarDelCarrito = (producto, numero) => {
@@ -71,8 +92,10 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ carrito, agregarAlCarrito, calcularCantidad, calcularTotal, 
-        vaciarCarrito, quitarDelCarrito, incrementarCantidad, decrementarCantidad, eliminarDelCarrito, primeraEnMayuscula }}>
+        <CartContext.Provider value={{
+            carrito, agregarAlCarrito, calcularCantidad, calcularTotal,
+            vaciarCarrito, quitarDelCarrito, incrementarCantidad, decrementarCantidad, eliminarDelCarrito, primeraEnMayuscula
+        }}>
             {children}
         </CartContext.Provider>
     )

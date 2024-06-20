@@ -3,6 +3,7 @@ import { CartContext } from '../../context/CartContext'
 import { useForm } from 'react-hook-form';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import { Link } from 'react-router-dom';
 
 export const Checkout = () => {
     const { carrito, calcularTotal, vaciarCarrito, primeraEnMayuscula } = useContext(CartContext);
@@ -36,6 +37,7 @@ export const Checkout = () => {
             <div className='cuerpoPrincipal'>
                 <p className='cuerpoPrincipal__mensaje'>Gracias confiar en nosotros {nombre}, volvé cuando quieras</p>
                 <p className='cuerpoPrincipal__mensaje'>Para hacer el seguimiento de tu pedido, el identificador es este: {docId}</p>
+                <Link to="/" className='cuerpoPrincipal__enlaceRetorno'>Volver a inicio</Link>
             </div>
         )
     }
