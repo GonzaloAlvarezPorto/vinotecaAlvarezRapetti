@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import { db } from '../firebase/config';
 import { useForm } from 'react-hook-form';
 import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 export const CargarProductos = () => {
 
@@ -11,8 +12,11 @@ export const CargarProductos = () => {
     const { primeraEnMayuscula } = useContext(CartContext)
 
     let [docId, setDocId] = useState("");
+    let [bloqueado, setBloqueado] = useState(false);
 
+    
     const cargarDatos = (dataProducto) => {
+        setBloqueado(true);
 
         const productoParaCargar = {
             nombre: primeraEnMayuscula(dataProducto.nombre),
@@ -35,10 +39,11 @@ export const CargarProductos = () => {
 
     if (docId) {
         return (
-            <>
-                <h1>Producto cargado</h1>
-                <p>El identificador es este: {docId}</p>
-            </>
+            <div className='cuerpoPrincipal'>
+                <p className='cuerpoPrincipal__mensaje'>Producto cargado</p>
+                <p className='cuerpoPrincipal__mensaje'>El identificador es este: {docId}</p>
+                <Link to = "/">Volver al inicio</Link>
+            </div>
         )
     }
 
@@ -52,7 +57,8 @@ export const CargarProductos = () => {
                 <input className='formulario__input' type="text" required placeholder="Ingrese una descripción" {...register("descripcion")} />
                 <input className='formulario__input' type="text" required placeholder="Ingrese el id de la categoría" {...register("idCategoria")} />
                 <input className='formulario__input' type="text" required placeholder="Ingrese el nombre de la categoría" {...register("nombreCategoria")} />
-                <button className='formulario__boton' type="submit">Agregar a la base de datos</button>
+                <button className='formulario__boton' type="submit" disabled={bloqueado}>{bloqueado ? "Procesando..." : "Agregar a la base de datos"}
+                </button>
             </form>
         </div>
     )

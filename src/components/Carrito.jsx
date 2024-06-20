@@ -10,31 +10,34 @@ export const Carrito = () => {
 
     return (
         <div className='cuerpoPrincipal'>
-            <div className='cuerpoPrincipal__contenedorProductos'>
-                {carrito.map((producto) => <div key={producto.id} className='contenedorProductos__fichaProducto'>
-                    <h1 className='fichaProducto__titulo'>{producto.nombre}</h1>
-                    <img className='fichaProducto__imagen' src={producto.imagen} alt="" />
-                    <div className='fichaProducto__precio'>Precio: ${producto.precio}</div>
-                    <div className='fichaProducto__cantidad'>Cantidad: {producto.cantidad}</div>
-                    <div className='fichaProducto__totalProducto'>Total producto: ${producto.cantidad * producto.precio}</div>
-                    <button onClick={() => quitarDelCarrito(producto, cantidad)} className='fichaProducto__boton'>Uno menos ➖</button>
-                    <button onClick={() => eliminarDelCarrito(producto)} className='fichaProducto__boton'>Vaciar producto ❌</button></div>)
-                }
-                {
+            <div className='cuerpoPrincipal__carrito'>
+            {
                     carrito.length > 0 ?
                         <>
-                            <div className='contenedorProductos__resumen'>
+                            <div className='cuerpoPrincipalCarrito__resumen'>
                                 <h2 className='resumen__titulo'>Total: ${calcularTotal()}</h2>
                                 <button className="resumen__boton" onClick={vaciarCarrito}>Vaciar carrito</button>
                                 <Link to="/finalizar-compra" className='resumen__boton'><button className='boton__boton'>Finalizar compra</button></Link>
                             </div>
                         </> :
-                        <div className='contenedorProductos__resumen'>
+                        <div className='cuerpoPrincipalCarrito__resumen'>
                             <h2 className='resumen__titulo'>
                                 No hay productos en el carrito
                             </h2>
                         </div>
                 }
+                <div className='cuerpoPrincipalCarrito__contenedorProductosCarrito'>
+                    {carrito.map((producto) => <div key={producto.id} className='contenedorProductosCarrito__fichaProductoCarrito'>
+                        <h1 className='fichaProductoCarrito__titulo'>{producto.nombre}</h1>
+                        <img className='fichaProductoCarrito__imagen' src={producto.imagen} alt="" />
+                        <div className='fichaProductoCarrito__precio'>Precio: ${producto.precio}</div>
+                        <div className='fichaProductoCarrito__cantidad'>Cantidad: {producto.cantidad}</div>
+                        <div className='fichaProductoCarrito__totalProducto'>Total producto: ${producto.cantidad * producto.precio}</div>
+                        <button onClick={() => quitarDelCarrito(producto, cantidad)} className='fichaProductoCarrito__boton'>Uno menos ➖</button>
+                        <button onClick={() => eliminarDelCarrito(producto)} className='fichaProductoCarrito__boton'>Vaciar producto ❌</button></div>)
+                    }
+                </div>
+                
             </div>
         </div>
     )
