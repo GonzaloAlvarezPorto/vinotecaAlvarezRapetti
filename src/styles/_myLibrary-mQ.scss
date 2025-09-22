@@ -31,7 +31,7 @@
     .pd-0-mQ {
         padding: 0;
     }
-    
+
     .w-80-mQ {
         width: 80%;
     }
@@ -52,10 +52,10 @@
         font-size: 12px;
     }
 
-    .fS-10px-mQ{
+    .fS-10px-mQ {
         font-size: 10px;
     }
-    
+
     .fS-8px-mQ {
         font-size: 8px;
     }
@@ -64,7 +64,7 @@
         display: none;
     }
 
-    .dS-flex-mQ{
+    .dS-flex-mQ {
         display: flex;
     }
 
@@ -87,28 +87,32 @@
         z-index: 1000;
     }
 
-    .pdUD-0_5rem-mQ{
+    .pdUD-0_5rem-mQ {
         padding: 0.5rem 0;
     }
 
-    .gap-0-mQ{
+    .gap-0-mQ {
         gap: 0;
     }
 
-    .menu-mQ{
+    .menu-mQ {
         display: flex;
         flex-direction: column;
-        position: absolute; 
-        top:80px;
+        position: absolute;
+        top: 80px;
         right: 0;
         text-align: end;
         background-color: rgb(black, 0.9);
         width: 100%;
-        padding: 0.5rem 1rem; 
+        padding: 0.5rem 1rem;
         gap: 0.7rem;
         justify-content: flex-start;
         height: calc(100vh - 80px);
         background-size: cover;
         font-size: 14px;
+    }
+
+    .heroSize-home {
+        height: calc(100vh - 80px - 90px);
     }
 }

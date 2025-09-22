@@ -30,9 +30,9 @@ export default function Home() {
       <div className="flex-col heroSize z-index-1000-mQ gap-0_5rem w-50 left-0-mQ jC-center pos-rel left-7rem pd-0-mQ pdLat-2rem w-90-mQ">
         <div className="flex-row w-100">
           {user ? (
-            <div className="flex-row gap-1rem w-100 aI-center" onMouseEnter={closeMenuInstant}>
+            <div className="flex-row w-100 jC-spBtw aI-center" onMouseEnter={closeMenuInstant}>
               <p
-                className="jC-center w-100 tA-center fS-12px-mQ"
+                className="jC-center tA-center fS-12px-mQ"
               >
                 ¡Hola {user.username}!
               </p>
@@ -40,7 +40,7 @@ export default function Home() {
                 onClick={() => {
                   logout();
                 }}
-                className="z-index999 jC-center bGc-transp border-none fS-16px navbar cR-pt tD-under fS-12px-mQ w-100 tA-center"
+                className="z-index999 jC-center bGc-transp border-none fS-16px navbar cR-pt tD-under fS-12px-mQ tA-center"
               >
                 ¿Querés irte? Cerrá sesión aquí
               </button>
@@ -84,7 +84,7 @@ export default function Home() {
           <Link href={"/productos"} className="btn-action">CATÁLOGO</Link>
         </div>
       </div>
-      <div className="callToAction heroSize"></div>
+      <div className="callToAction heroSize-home"></div>
     </div>
   );
 }

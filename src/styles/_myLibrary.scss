@@ -611,6 +611,10 @@ cursor: pointer;
     min-height: calc(100vh - 80px - 90px);
 }
 
+.heroSize-home{
+    @extend .heroSize;
+}
+
 .heroImage:not(:first-child) {
     margin-left: -15px;
 }
