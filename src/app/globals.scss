@@ -1,0 +1,37 @@
+@use "../styles/variables" as var;
+@use "../styles/myLibrary";
+@use "../styles/myLibrary-mQ";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Alata', sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+main {
+  background-color: rgb(var.$black-logo, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  min-height: 90px;
+  background-color: var.$black-logo;
+  width: 100%;
+  bottom: 0;
+  color: var.$letrasFooter;
+  z-index: 1000;
+  justify-content: center;
+}

@@ -1,0 +1,114 @@
+@use "./variables" as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@media screen and (max-width: 800px) {
+    .flex-col-mQ {
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.7rem;
+        margin: 0;
+    }
+
+    .sabor-mQ {
+        background: linear-gradient(90deg, black 0%, black 48%, white 48%, white 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .left-0-mQ {
+        left: 0;
+    }
+
+    .jC-center-mQ {
+        justify-content: center;
+    }
+
+    .pd-0-mQ {
+        padding: 0;
+    }
+    
+    .w-80-mQ {
+        width: 80%;
+    }
+
+    .w-90-mQ {
+        width: 90%;
+    }
+
+    .w-100-mQ {
+        width: 100%;
+    }
+
+    .fS-18px-mQ {
+        font-size: 18px;
+    }
+
+    .fS-12px-mQ {
+        font-size: 12px;
+    }
+
+    .fS-10px-mQ{
+        font-size: 10px;
+    }
+    
+    .fS-8px-mQ {
+        font-size: 8px;
+    }
+
+    .dS-none-mQ {
+        display: none;
+    }
+
+    .dS-flex-mQ{
+        display: flex;
+    }
+
+    .h-25px-mQ {
+        height: 25px;
+    }
+
+    .w-25px-mQ {
+        width: 25px;
+    }
+
+    .callToAction {
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        background-position: top center;
+    }
+
+    .z-index-1000-mQ {
+        z-index: 1000;
+    }
+
+    .pdUD-0_5rem-mQ{
+        padding: 0.5rem 0;
+    }
+
+    .gap-0-mQ{
+        gap: 0;
+    }
+
+    .menu-mQ{
+        display: flex;
+        flex-direction: column;
+        position: absolute; 
+        top:80px;
+        right: 0;
+        text-align: end;
+        background-color: rgb(black, 0.9);
+        width: 100%;
+        padding: 0.5rem 1rem; 
+        gap: 0.7rem;
+        justify-content: flex-start;
+        height: calc(100vh - 80px);
+        background-size: cover;
+        font-size: 14px;
+    }
+}

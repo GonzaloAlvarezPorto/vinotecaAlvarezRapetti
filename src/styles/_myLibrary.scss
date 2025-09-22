@@ -1,0 +1,672 @@
+@use "./variables" as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+// height
+.h-auto {
+    height: auto;
+}
+
+.h-20px{
+    height: 20px;
+}
+
+.h-25px {
+    height: 25px;
+
+}
+
+.h-30px {
+    height: 30px;
+}
+
+.h-35px {
+    height: 35px;
+}
+
+.h-40px {
+    height: 40px;
+}
+
+.h-50px {
+    height: 50px;
+}
+
+.h-70px {
+    height: 70px;
+}
+
+.h-80px {
+    height: 80px;
+}
+
+.h-150px {
+    height: 150px;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+.h-90 {
+    height: 90%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-200 {
+    height: 200%;
+}
+
+.h-50vh {
+    height: 50vh;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+// max-height
+.maxH-250px {
+    max-height: 250px;
+}
+
+// min-width
+.minW-30 {
+    min-width: 30%;
+}
+
+.minW-200px{
+    min-width: 200px;
+}
+
+.minW-300px{
+    min-width: 300px;
+}
+
+// max-width
+.maxW-300px {
+    max-width: 300px;
+}
+
+.maxW-400px {
+    max-width: 400px;
+}
+
+.maxW-500px {
+    max-width: 500px;
+}
+
+// width
+.w-10 {
+    width: 10%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-35 {
+    width: 35%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-65 {
+    width: 65%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-85 {
+    width: 85%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-30px {
+    width: 30px;
+}
+
+.w-35px {
+    width: 35px;
+}
+
+.w-100px {
+    width: 100px;
+}
+
+.w-150px {
+    width: 150px;
+}
+
+.w-300px {
+    width: 300px;
+}
+
+// color
+.fC-letras {
+    color: var.$letras;
+}
+
+.fC-letrasFooter {
+    color: var.$letrasFooter;
+}
+
+.fC-dorado-logo {
+    color: var.$dorado-logo
+}
+
+.fC-dorado-hero {
+    color: var.$dorado-hero;
+}
+
+.fC-black {
+    color: black;
+}
+
+.fC-white {
+    color: white;
+}
+
+.fC-red{
+    color: red;
+}
+
+// display
+.dS-block {
+    display: block;
+}
+
+.dS-none {
+    display: none;
+}
+
+// justify-content
+.jC-spBtw {
+    justify-content: space-between;
+}
+
+.jC-center {
+    justify-content: center;
+}
+
+.jC-end {
+    justify-content: flex-end;
+}
+
+// gap
+.gap-0_2rem {
+    gap: 0.2rem;
+}
+
+.gap-0_5rem {
+    gap: 0.5rem;
+}
+
+.gap-1rem {
+    gap: 1rem;
+}
+
+.gap-1_5rem {
+    gap: 1.5rem;
+}
+
+.gap-2rem {
+    gap: 2rem;
+}
+
+.gap-3rem {
+    gap: 3rem;
+}
+
+// padding
+.pd-0_2rem {
+    padding: 0.2rem;
+}
+
+.pd-0_5rem {
+    padding: 0.5rem;
+}
+
+.pd-1rem {
+    padding: 1rem;
+}
+
+.pd-2rem {
+    padding: 2rem;
+}
+
+.pdLat-1rem {
+    padding: 0 1rem;
+}
+
+.pdLat-2rem {
+    padding: 0 2rem;
+}
+
+.pdL-0_5rem {
+    padding-left: 0.5rem;
+}
+
+.pdUD-0_5rem {
+    padding: 0.5rem 0;
+}
+
+.pdUD-3rem {
+    padding: 3rem 0;
+}
+
+// margin
+.m-0_1rem-0_2rem {
+    padding: 0.1rem 0.2rem;
+}
+
+.mLat-1rem {
+    margin: 0 1rem;
+}
+
+.mUD-0_2rem {
+    margin: 0.2rem 0;
+}
+
+.mB-0_5rem {
+    margin-bottom: 0.5rem;
+}
+
+.mL-auto {
+    margin-left: auto;
+}
+
+.mL-1rem {
+    margin-left: 1rem;
+}
+
+.mL-2rem {
+    margin-left: 2rem;
+}
+
+.mL-3rem {
+    margin-left: 3rem;
+}
+
+.mT-0_5rem {
+    margin-top: 0.5rem;
+}
+
+.mT-1rem {
+    margin-top: 1rem;
+}
+
+.mR-1rem {
+    margin-right: 1rem;
+}
+
+// letter-spacing
+.lS-0_5px {
+    letter-spacing: -0.5px;
+}
+
+// align-items
+.aI-center {
+    align-items: center;
+}
+
+.aI-end {
+    align-items: flex-end;
+}
+
+// align-self
+.aS-end {
+    align-self: flex-end;
+}
+
+.aS-center {
+    align-self: center;
+}
+
+// position
+.pos-abs {
+    position: absolute;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+// overflow
+.ovF-hidden {
+    overflow: hidden;
+}
+
+// top
+.top-0 {
+    top: 0;
+}
+
+.top-60px{
+    top: 60px;
+}
+
+.top-80px {
+    top: 80px;
+}
+
+// left
+.left-0 {
+    left: 0;
+}
+
+.left-7rem {
+    left: 7rem;
+}
+
+// z-index
+.z-index0 {
+    z-index: 0;
+}
+
+.z-index10 {
+    z-index: 10;
+}
+
+.z-index999 {
+    z-index: 999;
+}
+
+.z-index1000 {
+    z-index: 1000;
+}
+
+// font-weight
+.fW-bold {
+    font-weight: bold;
+}
+
+// border-radius
+.bR-15px {
+    border-radius: 15px;
+}
+
+.bR-100px {
+    border-radius: 100px;
+}
+
+// border
+.bS-dorado-logo-2px {
+    border: solid 2px var.$dorado-logo;
+}
+
+.bS-black-1px{
+    border: solid 1px black;
+}
+
+.border-none{
+    border: none;
+}
+// text-align
+.tA-end {
+    text-align: end;
+}
+
+.tA-center {
+    text-align: center;
+}
+
+// font-size
+.fS-12px {
+    font-size: 12px;
+}
+
+.fS-13px {
+    font-size: 13px;
+}
+
+.fS-16px {
+    font-size: 16px;
+}
+
+.fS-18px {
+    font-size: 18px;
+}
+
+.fS-28px {
+    font-size: 28px;
+}
+
+// text-decoration
+.tD-none {
+    text-decoration: none;
+}
+
+.tD-under{
+    text-decoration: underline;
+}
+
+// flex-wrap
+.fW-wR {
+    flex-wrap: wrap;
+}
+
+// list-style
+.lS-none {
+    list-style: none;
+}
+
+// background-color
+.bGc-transp{
+    background-color: transparent;
+}
+.bGc-black_logo {
+    background-color: var.$black-logo;
+}
+
+.bGc-black_logo_0_2 {
+    background-color: rgb(var.$black-logo, 0.2);
+}
+
+.bGc-black_logo_0_4 {
+    background-color: rgb(var.$black-logo, 0.4);
+}
+
+.bGc-black {
+    background-color: black;
+}
+
+.bGc-grey {
+    background-color: grey;
+}
+
+.bGc-white {
+    background-color: white;
+}
+
+.bGc-letrasFooter{
+    background-color: var.$letrasFooter;
+}
+
+// font-family
+.fF-alata {
+    font-family: "Alata", sans-serif;
+}
+
+.fF-lato {
+    font-family: "Lato", sans-serif;
+}
+
+// object-fit
+.oF-cover {
+    object-fit: cover;
+}
+
+.oF-contain {
+    object-fit: contain;
+}
+
+// text-transform
+.tT-upper{
+    text-transform: uppercase;
+}
+
+// cursor
+.cR-pt{
+cursor: pointer;
+}
+
+// blocks
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-row-rev {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.inBl-rel {
+    display: inline-block;
+    position: relative;
+}
+
+.submenu:hover {
+    color: white;
+}
+
+.navbar:hover {
+    color: var.$dorado-logo;
+}
+
+.historias {
+    font-family: 'Lato', sans-serif;
+    color: #111;
+    line-height: 2.5;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.callToAction {
+    background-image: url("/sirviendoVino.jpg");
+    position: relative;
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    z-index: 998;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000000);
+    mask-image: linear-gradient(90deg, transparent 0, #000);
+    width: 100%;
+}
+
+.heroSize {
+    min-height: calc(100vh - 80px - 90px);
+}
+
+.heroImage:not(:first-child) {
+    margin-left: -15px;
+}
+
+.btn {
+    padding: 0.5rem 4rem;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: var.$black-logo;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+    z-index: 999;
+}
+
+.btn-action {
+    @extend .btn;
+    padding: 0.5rem 5rem;
+    background-color: var.$dorado-hero;
+
+    &:hover {
+        background-color: white;
+        color: var.$dorado-hero;
+    }
+}
+
+.btn-admin{
+    @extend .btn;
+    min-width: 100px;
+    max-width: 150px;
+    justify-content: center
+}
+
+.btn-back{
+    @extend .btn;
+    align-self: center;
+}
+
+.btn-form{
+    @extend .btn;
+    padding: 0.5rem 2rem;
+}
+
+.btn-hero{
+    @extend .btn;
+    padding: 0.3rem 1rem;
+}
+
+.color-resaltado{
+    color: var.$dorado-logo;
+    transition: color 0.7s ease;
+}
+
+.color-original{
+    color: var.$letrasFooter;
+    transition: color 0.7s ease;
+}
