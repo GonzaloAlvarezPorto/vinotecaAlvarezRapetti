@@ -40,14 +40,14 @@ export default function Home() {
                 onClick={() => {
                   logout();
                 }}
-                className="z-index999 jC-center bGc-transp border-none fS-16px navbar cR-pt tD-under fS-12px-mQ tA-center"
+                className="z-index999 jC-center bGc-transp border-none fS-16px navbar-red cR-pt tD-under fS-12px-mQ tA-center"
               >
                 ¿Querés irte? Cerrá sesión aquí
               </button>
             </div>
           ) : (
             // Si NO hay usuario, mostrar login
-            <Link href="/login" className="jC-center bGc-transp border-none fS-16px navbar cR-pt tD-under fS-12px-mQ w-100 tA-center tT-upper fC-black">
+            <Link href="/login" className="jC-center bGc-transp border-none fS-16px navbar-red cR-pt tD-under fS-12px-mQ w-100 tA-center tT-upper fC-black">
               ¿Ya te registraste? Iniciá sesión
             </Link>
           )}
@@ -57,7 +57,7 @@ export default function Home() {
             {bodegasRandom.map((bodega, i) => (
               <Link className="heroImage" key={i} href={bodega.enlace} target="_blank">
                 <img
-                  className={`w-30px h-30px w-25px-mQ h-25px-mQ ${bodega.color} bR-100px oF-contain bS-dorado-logo-2px`}
+                  className={`w-30px h-30px w-25px-mQ h-25px-mQ bC-color-vino ${bodega.color} bR-100px oF-contain bS-dorado-logo-2px`}
                   src={bodega.imagen}
                   alt={bodega.nombre}
                   title={bodega.nombre}
@@ -75,7 +75,7 @@ export default function Home() {
 
         <span className="fS-18px fS-12px-mQ w-90 w-100-mQ">Elegimos cada botella con pasión y conocimiento, pensando en quienes valoran la calidad y la tradición.</span>
 
-        <span className="fS-18px fS-12px-mQ w-75 w-100-mQ sabor-mQ fC-dorado-hero"><strong>Sabor, aroma y encuentro</strong> en cada etiqueta que ofrecemos.</span>
+        <span className="fS-18px fS-12px-mQ w-75 w-100-mQ sabor-mQ fC-color-vino"><strong>Sabor, aroma y encuentro</strong> en cada etiqueta que ofrecemos.</span>
 
         <span className="fS-13px w-65 w-100-mQ">Piezas únicas para tu mesa: vinos, licores y espumantes, elaborados por productores de excelencia y listos para compartir.</span>
 

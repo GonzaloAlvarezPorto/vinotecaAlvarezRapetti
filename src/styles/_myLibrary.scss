@@ -9,7 +9,7 @@
     height: auto;
 }
 
-.h-20px{
+.h-20px {
     height: 20px;
 }
 
@@ -80,11 +80,11 @@
     min-width: 30%;
 }
 
-.minW-200px{
+.minW-200px {
     min-width: 200px;
 }
 
-.minW-300px{
+.minW-300px {
     min-width: 300px;
 }
 
@@ -207,8 +207,12 @@
     color: white;
 }
 
-.fC-red{
+.fC-red {
     color: red;
+}
+
+.fC-color-vino {
+    color: var.$color-vino;
 }
 
 // display
@@ -382,7 +386,7 @@
     top: 0;
 }
 
-.top-60px{
+.top-60px {
     top: 60px;
 }
 
@@ -435,13 +439,14 @@
     border: solid 2px var.$dorado-logo;
 }
 
-.bS-black-1px{
+.bS-black-1px {
     border: solid 1px black;
 }
 
-.border-none{
+.border-none {
     border: none;
 }
+
 // text-align
 .tA-end {
     text-align: end;
@@ -477,7 +482,7 @@
     text-decoration: none;
 }
 
-.tD-under{
+.tD-under {
     text-decoration: underline;
 }
 
@@ -492,9 +497,10 @@
 }
 
 // background-color
-.bGc-transp{
+.bGc-transp {
     background-color: transparent;
 }
+
 .bGc-black_logo {
     background-color: var.$black-logo;
 }
@@ -519,8 +525,12 @@
     background-color: white;
 }
 
-.bGc-letrasFooter{
+.bGc-letrasFooter {
     background-color: var.$letrasFooter;
+}
+
+.bGc-color-vino {
+    background-color: var.$color-vino;
 }
 
 // font-family
@@ -542,13 +552,18 @@
 }
 
 // text-transform
-.tT-upper{
+.tT-upper {
     text-transform: uppercase;
 }
 
 // cursor
-.cR-pt{
-cursor: pointer;
+.cR-pt {
+    cursor: pointer;
+}
+
+// border-color
+.bC-color-vino {
+    border-color: var.$color-vino;
 }
 
 // blocks
@@ -578,6 +593,10 @@ cursor: pointer;
 
 .navbar:hover {
     color: var.$dorado-logo;
+}
+
+.navbar-red:hover{
+    color: var.$color-vino;
 }
 
 .historias {
@@ -611,7 +630,7 @@ cursor: pointer;
     min-height: calc(100vh - 80px - 90px);
 }
 
-.heroSize-home{
+.heroSize-home {
     @extend .heroSize;
 }
 
@@ -635,42 +654,42 @@ cursor: pointer;
 .btn-action {
     @extend .btn;
     padding: 0.5rem 5rem;
-    background-color: var.$dorado-hero;
+    background-color: var.$color-vino;
 
     &:hover {
         background-color: white;
-        color: var.$dorado-hero;
+        color: var.$color-vino;
     }
 }
 
-.btn-admin{
+.btn-admin {
     @extend .btn;
     min-width: 100px;
     max-width: 150px;
     justify-content: center
 }
 
-.btn-back{
+.btn-back {
     @extend .btn;
     align-self: center;
 }
 
-.btn-form{
+.btn-form {
     @extend .btn;
     padding: 0.5rem 2rem;
 }
 
-.btn-hero{
+.btn-hero {
     @extend .btn;
     padding: 0.3rem 1rem;
 }
 
-.color-resaltado{
-    color: var.$dorado-logo;
+.color-resaltado {
+    color: var.$color-vino;
     transition: color 0.7s ease;
 }
 
-.color-original{
+.color-original {
     color: var.$letrasFooter;
     transition: color 0.7s ease;
 }
