@@ -57,7 +57,7 @@ export default function Home() {
             {bodegasRandom.map((bodega, i) => (
               <Link className="heroImage" key={i} href={bodega.enlace} target="_blank">
                 <img
-                  className={`w-30px h-30px w-25px-mQ h-25px-mQ bC-color-vino ${bodega.color} bR-100px oF-contain bS-dorado-logo-2px`}
+                  className={`w-30px h-30px w-25px-mQ h-25px-mQ ${bodega.color} bS-color-vino-1px bR-100px oF-contain`}
                   src={bodega.imagen}
                   alt={bodega.nombre}
                   title={bodega.nombre}

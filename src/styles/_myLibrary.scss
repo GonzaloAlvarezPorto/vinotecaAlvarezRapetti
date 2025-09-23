@@ -435,8 +435,8 @@
 }
 
 // border
-.bS-dorado-logo-2px {
-    border: solid 2px var.$dorado-logo;
+.bS-color-vino-1px {
+    border: solid 1px var.$color-vino;
 }
 
 .bS-black-1px {
@@ -595,8 +595,8 @@
     color: var.$dorado-logo;
 }
 
-.navbar-red:hover{
-    color: var.$color-vino;
+.navbar-red:hover {
+    color: var.$color-vino-clarete;
 }
 
 .historias {
@@ -621,10 +621,25 @@
     background-position: left center;
     background-repeat: no-repeat;
     z-index: 998;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000000);
-    mask-image: linear-gradient(90deg, transparent 0, #000);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, var.$color-vino 50%, #000000 100%);
+    mask-image: linear-gradient(90deg, transparent 0, var.$color-vino 50%, #000 100%);
     width: 100%;
 }
+
+// /* Overlay para resaltar el rojo vino */
+// .callToAction::before {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     background: rgba(var.$color-vino, 0.3);
+//     /* rojo vino semitransparente */
+//     mix-blend-mode: multiply;
+//     /* se funde con la imagen */
+//     pointer-events: none;
+//     z-index: 999;
+//     /* arriba de la imagen, debajo del texto */
+// }
+
 
 .heroSize {
     min-height: calc(100vh - 80px - 90px);
@@ -685,7 +700,7 @@
 }
 
 .color-resaltado {
-    color: var.$color-vino;
+    color: var.$color-vino-clarete;
     transition: color 0.7s ease;
 }
 

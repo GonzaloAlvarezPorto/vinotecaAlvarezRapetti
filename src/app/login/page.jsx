@@ -43,7 +43,7 @@ const Login = () => {
 
             {/* Enlace a registro */}
             <p>
-                ¿No tenés cuenta? <Link className='fC-dorado-hero' href="/registro">Registrate aquí</Link>
+                ¿No tenés cuenta? <Link className='fC-color-vino' href="/registro">Registrate aquí</Link>
             </p>
         </div>
     )

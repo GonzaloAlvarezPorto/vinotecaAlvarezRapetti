@@ -71,7 +71,7 @@ const NavBar = () => {
               toggleMenu();
             }}
           >
-            <Link href={seccion.ruta} className='fC-letras navbar'>
+            <Link href={seccion.ruta} className='fC-letras navbar-red'>
               {seccion.nombre}
             </Link>
           </li>
