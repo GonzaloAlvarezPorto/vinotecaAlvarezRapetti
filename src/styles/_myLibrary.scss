@@ -46,6 +46,10 @@
     height: 150px;
 }
 
+.h-350px{
+    height: 350px;
+}
+
 .h-50 {
     height: 50%;
 }
@@ -191,12 +195,16 @@
     color: var.$letrasFooter;
 }
 
-.fC-dorado-logo {
-    color: var.$dorado-logo
+.fC-doradoLogo {
+    color: var.$doradoLogo
 }
 
-.fC-dorado-hero {
-    color: var.$dorado-hero;
+.fC-doradoHero {
+    color: var.$doradoHero;
+}
+
+.fC-black_logo_0_7{
+    color: rgb(var.$black-logo, 0.7);
 }
 
 .fC-black {
@@ -211,8 +219,12 @@
     color: red;
 }
 
-.fC-color-vino {
-    color: var.$color-vino;
+.fC-colorVino {
+    color: var.$colorVino;
+}
+
+.fC-coloVinoClarete{
+    color: var.$colorVino-clarete;
 }
 
 // display
@@ -222,6 +234,10 @@
 
 .dS-none {
     display: none;
+}
+
+.dS-grid{
+    display: grid;
 }
 
 // justify-content
@@ -295,15 +311,19 @@
     padding: 0.5rem 0;
 }
 
+.pdUD-1rem {
+    padding: 1rem 0;
+}
+
 .pdUD-3rem {
     padding: 3rem 0;
 }
 
-// margin
-.m-0_1rem-0_2rem {
-    padding: 0.1rem 0.2rem;
+.pd-1rem-0_5rem {
+    padding: 1rem 0.5rem;
 }
 
+// margin
 .mLat-1rem {
     margin: 0 1rem;
 }
@@ -386,12 +406,20 @@
     top: 0;
 }
 
+.top-20px{
+    top: 20px;
+}
+
 .top-60px {
     top: 60px;
 }
 
 .top-80px {
     top: 80px;
+}
+
+.top-105px {
+    top: 105px;
 }
 
 // left
@@ -404,19 +432,19 @@
 }
 
 // z-index
-.z-index0 {
+.z-index_0 {
     z-index: 0;
 }
 
-.z-index10 {
+.z-index_10 {
     z-index: 10;
 }
 
-.z-index999 {
+.z-index_999 {
     z-index: 999;
 }
 
-.z-index1000 {
+.z-index_1000 {
     z-index: 1000;
 }
 
@@ -435,16 +463,24 @@
 }
 
 // border
-.bS-color-vino-1px {
-    border: solid 1px var.$color-vino;
+.bS-colorVino_1px {
+    border: solid 1px var.$colorVino;
 }
 
-.bS-black-1px {
+.bS-black_1px {
     border: solid 1px black;
 }
 
 .border-none {
     border: none;
+}
+
+.bSR-black_1px{
+    border-right: 1px solid black;
+}
+
+.bSB-black_1px{
+        border-bottom: 1px solid black;
 }
 
 // text-align
@@ -529,8 +565,8 @@
     background-color: var.$letrasFooter;
 }
 
-.bGc-color-vino {
-    background-color: var.$color-vino;
+.bGc-colorVino {
+    background-color: var.$colorVino;
 }
 
 // font-family
@@ -562,8 +598,22 @@
 }
 
 // border-color
-.bC-color-vino {
-    border-color: var.$color-vino;
+.bC-colorVino {
+    border-color: var.$colorVino;
+}
+
+// box-sizing
+.bS-conBox{
+    box-sizing: content-box;
+}
+
+.bS-borBox{
+    box-sizing: border-box;
+}
+
+// word-break
+.wB-brAll{
+word-break: break-all;
 }
 
 // blocks
@@ -592,11 +642,11 @@
 }
 
 .navbar:hover {
-    color: var.$dorado-logo;
+    color: var.$doradoLogo;
 }
 
 .navbar-red:hover {
-    color: var.$color-vino-clarete;
+    color: var.$colorVino-clarete;
 }
 
 .historias {
@@ -615,31 +665,16 @@
 }
 
 .callToAction {
-    background-image: url("/sirviendoVino.jpg");
+    background-image: url("/img/sirviendoVino.jpg");
     position: relative;
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
     z-index: 998;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, var.$color-vino 50%, #000000 100%);
-    mask-image: linear-gradient(90deg, transparent 0, var.$color-vino 50%, #000 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, var.$colorVino 50%, #000000 100%);
+    mask-image: linear-gradient(90deg, transparent 0, var.$colorVino 50%, #000 100%);
     width: 100%;
 }
-
-// /* Overlay para resaltar el rojo vino */
-// .callToAction::before {
-//     content: '';
-//     position: absolute;
-//     inset: 0;
-//     background: rgba(var.$color-vino, 0.3);
-//     /* rojo vino semitransparente */
-//     mix-blend-mode: multiply;
-//     /* se funde con la imagen */
-//     pointer-events: none;
-//     z-index: 999;
-//     /* arriba de la imagen, debajo del texto */
-// }
-
 
 .heroSize {
     min-height: calc(100vh - 80px - 90px);
@@ -669,11 +704,11 @@
 .btn-action {
     @extend .btn;
     padding: 0.5rem 5rem;
-    background-color: var.$color-vino;
+    background-color: var.$colorVino;
 
     &:hover {
         background-color: white;
-        color: var.$color-vino;
+        color: var.$colorVino;
     }
 }
 
@@ -692,6 +727,7 @@
 .btn-form {
     @extend .btn;
     padding: 0.5rem 2rem;
+    justify-content: center;
 }
 
 .btn-hero {
@@ -700,11 +736,19 @@
 }
 
 .color-resaltado {
-    color: var.$color-vino-clarete;
+    color: var.$colorVino-clarete;
     transition: color 0.7s ease;
 }
 
 .color-original {
     color: var.$letrasFooter;
     transition: color 0.7s ease;
+}
+
+.fichaProducto{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: start;
+    width: 100%;
 }

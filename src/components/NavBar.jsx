@@ -5,10 +5,10 @@ import Link from 'next/link';
 import React, { useContext, useState } from 'react'
 
 const NavBar = () => {
-  const { openSubMenu, closeMenu, closeMenuInstant, user } = useContext(VinotecaContext);
+  const { openSubMenu, closeMenu, closeMenuInstant, user, setCategoriaSeleccionada } = useContext(VinotecaContext);
 
   const [showMenu, setShowMenu] = useState(false);
-  const [urlBtn, setUrlBtn] = useState('/menu.png')
+  const [urlBtn, setUrlBtn] = useState('/img/menu.png');
 
   const secciones = [
     {
@@ -45,15 +45,15 @@ const NavBar = () => {
 
   const toggleMenu = () => {
     setShowMenu(prev => !prev);
-    setUrlBtn(prev => prev === '/menu.png' ? '/close.png' : '/menu.png');
+    setUrlBtn(prev => prev === '/img/menu.png' ? '/img/close.png' : '/img/menu.png');
   };
 
   return (
-    <div className='flex-row flex-col-mQ pdLat-1rem gap-3rem aI-center'>
+    <div className='flex-row home-mQ pdLat-1rem gap-3rem aI-center'>
       <button
         onClick={() => toggleMenu()}
         className='dS-none dS-flex-mQ bGc-transp border-none'>
-          <img className='h-35px' src={urlBtn} alt={urlBtn}  title={urlBtn}/>
+        <img className='h-35px' src={urlBtn} alt={urlBtn} title={urlBtn} />
       </button>
       <ul className={`${showMenu ? 'menu-mQ' : ''} flex-row gap-1rem dS-none-mQ`}>
         {seccionesFiltradas.map((seccion, i) => (
@@ -67,11 +67,15 @@ const NavBar = () => {
               }
             }}
             onMouseLeave={closeMenu}
-            onClick={()=> {
-              toggleMenu();
-            }}
           >
-            <Link href={seccion.ruta} className='fC-letras navbar-red'>
+            <Link
+              href={seccion.ruta}
+              className='fC-letras navbar-red'
+              onClick={() => {
+                if (seccion.nombre === "PRODUCTOS") setCategoriaSeleccionada(null);
+                toggleMenu();
+              }}
+            >
               {seccion.nombre}
             </Link>
           </li>

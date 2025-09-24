@@ -21,9 +21,9 @@ header {
 }
 
 main {
-  background-color: rgb(var.$black-logo, 0.2);
   display: flex;
   justify-content: space-between;
+  background-color: var.$main-color;
 }
 
 footer {

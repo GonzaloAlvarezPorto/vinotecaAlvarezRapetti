@@ -14,7 +14,7 @@ const Login = () => {
 
     return (
         <div className="flex-col aI-center w-100 jC-center gap-1rem">
-            <form onSubmit={handleLogin} className='flex-col aI-center gap-1rem bGc-black_logo_0_2 bS-black-1px pd-1rem'>
+            <form onSubmit={handleLogin} className='flex-col aI-center gap-1rem bGc-black_logo_0_2 bS-black_1px pd-1rem'>
                 <div className='flex-row gap-0_5rem jC-spBtw w-100'>
                     <label htmlFor='user'>Email:</label>
                     <input
@@ -43,7 +43,7 @@ const Login = () => {
 
             {/* Enlace a registro */}
             <p>
-                ¿No tenés cuenta? <Link className='fC-color-vino' href="/registro">Registrate aquí</Link>
+                ¿No tenés cuenta? <Link className='fC-colorVino' href="/registro">Registrate aquí</Link>
             </p>
         </div>
     )

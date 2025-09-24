@@ -30,6 +30,8 @@ export const VinotecaProvider = ({ children }) => {
 
     const [colorear, setColorear] = useState('');
 
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+
     //MENU
     const openSubMenu = () => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -81,10 +83,14 @@ export const VinotecaProvider = ({ children }) => {
 
     const categoriasUnicas = () => {
         const todas = productos
-            .map((p) => p.categoria?.nombre)
+            .map((p) => p?.categoria)
             .filter(Boolean);
-        return [...new Set(todas)];
+        return [...new Set(todas)].sort();
     };
+
+    const productosFiltrados = categoriaSeleccionada
+        ? productos.filter(p => p.categoria === categoriaSeleccionada)
+        : productos;
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -113,6 +119,7 @@ export const VinotecaProvider = ({ children }) => {
             localStorage.setItem('user', JSON.stringify(newUser));
             setMessage('¡Registro exitoso!');
             router.push("/")
+            setMessage(null)
         } catch (error) {
             setMessage(error.message);
         }
@@ -125,9 +132,11 @@ export const VinotecaProvider = ({ children }) => {
     }, []);
 
     const logout = () => {
+        const confirmLogout = window.confirm("¿Seguro que querés cerrar sesión?");
+        if (!confirmLogout) return; // si elige "Cancelar" no hace nada
+
         localStorage.removeItem('user');
         setUser(null);
-        alert(`Usuario: ${user.username}, tu sesión fue cerrada con éxito.`);
         router.push('/');
     };
 
@@ -174,7 +183,10 @@ export const VinotecaProvider = ({ children }) => {
             username, setUsername,
             handleRegister,
             opcionesUsuario, clase, setClase,
-            colorear, setColorear, cambiarColorTexto
+            colorear, setColorear, cambiarColorTexto,
+            categoriaSeleccionada, setCategoriaSeleccionada,
+            productosFiltrados,
+            productos, setProductos
         }}>
             {children}
         </VinotecaContext.Provider>

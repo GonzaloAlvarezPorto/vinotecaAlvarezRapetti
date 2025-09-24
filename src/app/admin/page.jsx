@@ -13,8 +13,8 @@ const Admin = () => {
       texto:'Pedidos'
     },
     {
-      enlace:'/admin/clientes',
-      texto:'Clientes'
+      enlace:'/admin/usuarios',
+      texto:'Usuarios'
     }
   ];
 
