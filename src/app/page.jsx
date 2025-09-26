@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="flex-row home-mQ jC-spBtw pos-rel ovF-hidden h-100 w-100">
-      <div className="flex-col heroSize z-index_1000-mQ gap-0_5rem w-50 left-0-mQ jC-center pos-rel left-7rem pd-0-mQ pdLat-2rem w-90-mQ">
+      <div className="flex-col heroSize z-index_1000-mQ gap-0_5rem w-50 left-0-mQ jC-center pos-rel left-7rem pd-1rem w-90-mQ">
         <div className="flex-row w-100">
           {user ? (
             <div className="flex-row w-100 jC-spBtw aI-center" onMouseEnter={closeMenuInstant}>

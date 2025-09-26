@@ -79,7 +79,7 @@ const CrearProductos = () => {
                     Crear producto
                 </button>
             </form>
-            <Link className="btn-back" href={"/admin/productos"}>
+            <Link className="btn-back" href={"/admin"}>
                 Volver
             </Link>
         </div>

@@ -32,16 +32,18 @@ const historias = [
 
 const Nosotros = () => {
     return (
-        <div className="historias gap-1rem">
+        <div className='flex-col w-100 jC-center gap-2rem aI-center pd-1rem'>
             <h2>¿QUIÉNES SOMOS?</h2>
-            <ul className='flex-col gap-1rem'>
-                {historias.map((historia, i) => (
-                    <li key={i} className={`${historia.className} jC-center aI-center home-mQ gap-1rem gap-0-mQ`}>
-                        <p className='maxW-500px w-90-mQ'>{historia.parrafo}</p>
-                        <img className='oF-cover maxH-250px h-auto w-300px' src={historia.imagen} alt={historia.imagen} />
-                    </li>
-                ))}
-            </ul>
+            <div className="historias">
+                <ul className='flex-col gap-1rem'>
+                    {historias.map((historia, i) => (
+                        <li key={i} className={`${historia.className} jC-center aI-center home-mQ gap-1rem gap-0-mQ`}>
+                            <p className='maxW-500px w-100-mQ'>{historia.parrafo}</p>
+                            <img className='oF-cover maxH-250px h-auto w-300px w-100-mQ' src={historia.imagen} alt={historia.imagen} />
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

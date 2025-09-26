@@ -9,7 +9,11 @@ const Admin = () => {
       texto:'Productos'
     },
     {
-      enlace:'/admin/Pedidos',
+      enlace:'/admin/productos/crear',
+      texto:'Producto nuevo'
+    },
+    {
+      enlace:'/admin/pedidos',
       texto:'Pedidos'
     },
     {
@@ -19,7 +23,7 @@ const Admin = () => {
   ];
 
   return (
-    <div className='flex-col w-100 aI-center gap-1rem jC-center'>
+    <div className='flex-col w-100 aI-center gap-1rem jC-center pd-1rem'>
       {
         botones.map((boton,i) => (
           <Link key={i} className='btn-admin' href={boton.enlace}>{boton.texto}</Link>

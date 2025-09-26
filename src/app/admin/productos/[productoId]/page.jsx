@@ -51,49 +51,60 @@ const AdminProductoIndividual = () => {
   };
 
   return (
-    <div className='flex-col w-100 pd-1rem aI-center jC-center gap-1rem'>
-      <div className='flex-col w-50 w-90-mQ pd-1rem gap-1rem bGc-grey'>
-        <div className="flex-col w-100 aI-center gap-1rem jC-center">
+    <div className='flex-col w-100 aI-center pd-1rem jC-center gap-1rem'>
+      <div className='flex-col w-30 w-100-mQ gap-1rem '>
+        <div className="flex-col w-100 aI-center gap-0_2rem jC-center">
           {Object.entries(formData)
             .filter(([clave]) => clave !== "id") // excluye el id
             .sort(([a], [b]) => a.localeCompare(b))
             .map(([clave, valor]) => (
               <div
-                className='flex-row w-100 ovF-hidden fW-wR jC-spBtw gap-1rem bSB-black_1px aI-center pdUD-0_5rem'
+                className='flex-col w-100 jC-spBtw pd-1rem bS-borBox gap-1rem bGc-grey aI-center'
                 key={clave}
               >
-                <label htmlFor='fiesta'>{primerMayuscula(clave)}:</label>
-                {editingField === clave ? (
-                  <input
-                  id='fiesta'
-                  name='fiesta'
-                    value={formData[clave] || ""}
-                    onChange={(e) => handleChange(e, clave)}
-                    className="input-form"
-                  />
-                ) : (
-                  <p className='tA-end w-50'>
-                    {clave === "precio"
-                      ? `$${valor}` // 👈 agrega el símbolo $
-                      : typeof valor === "object"
-                        ? JSON.stringify(valor)
-                        : valor}
-                  </p>
-                )}
-                {editingField === clave ? (
-                  <div className='flex-row gap-1rem'>
-                    <button className='btn-form' onClick={() => handleSave(clave)}>
-                      Guardar
+                <div className='flex-row fW-wR wB-brWord w-100 jC-spBtw'>
+                  <label htmlFor={formData.nombre}>{primerMayuscula(clave)}:</label>
+                  {editingField === clave ? (
+                    <input
+                      id={formData.nombre}
+                      name={formData.nombre}
+                      value={formData[clave] || ""}
+                      onChange={(e) => handleChange(e, clave)}
+                    />
+                  ) : (
+                    <p className='tA-end w-50'>
+                      {clave === "precio" ? (
+                        `$${valor}`
+                      ) : clave === "imagen" ? (
+                        <img
+                          src={valor}
+                          alt={formData.nombre || "Imagen del producto"}
+                          className="w-100px"
+                        />
+                      ) : typeof valor === "object" ? (
+                        JSON.stringify(valor)
+                      ) : (
+                        valor
+                      )}
+                    </p>
+                  )}
+                </div>
+                <div className='flex-row w-100-mQ gap-1rem aI-center jC-center'>
+                  {editingField === clave ? (
+                    <div className='flex-row w-100-mQ gap-1rem aI-center jC-center'>
+                      <button className='btn-form' onClick={() => handleSave(clave)}>
+                        Guardar
+                      </button>
+                      <button onClick={() => setEditingField(null)} className='btn-form'>
+                        ❌
+                      </button>
+                    </div>
+                  ) : (
+                    <button className='btn-form' onClick={() => setEditingField(clave)}>
+                      Editar
                     </button>
-                    <button onClick={()=>setEditingField(null)} className='btn-form'>
-                      ❌
-                    </button>
-                  </div>
-                ) : (
-                  <button className='btn-form' onClick={() => setEditingField(clave)}>
-                    Editar
-                  </button>
-                )}
+                  )}
+                </div>
               </div>
             ))}
         </div>

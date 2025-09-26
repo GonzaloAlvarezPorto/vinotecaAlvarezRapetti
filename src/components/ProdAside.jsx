@@ -1,11 +1,10 @@
 "use client"
 import VinotecaContext from '@/context/VinotecaContext';
-import Link from 'next/link';
 import React, { useContext, useState } from 'react'
 
 const ProdAside = () => {
 
-  const { loading, categoriasUnicas, setCategoriaSeleccionada } = useContext(VinotecaContext);
+  const { loading, categoriasUnicas, categoriaSeleccionada, setCategoriaSeleccionada } = useContext(VinotecaContext);
 
   const [open, setOpen] = useState(false);
 
@@ -17,31 +16,36 @@ const ProdAside = () => {
     setOpen(prev => !prev);
   }
 
+  const getCategoriaClass = (categoria) => {
+    return categoria === categoriaSeleccionada ? 'selected' : '';
+  }
+
   return (
-    <aside className='flex-col gap-0_5rem pd-1rem pd-0-mQ bSR-black_1px border-none-mQ bSB-black_1px-mQ'>
-      <p onClick={toggleMenu} className='dS-none dS-flex-mQ cR-pt pd-0_5rem'>
+    <aside className='flex-col bGc-black_logo_0_9 gap-0_5rem pd-1rem pd-0-mQ'>
+      <p onClick={toggleMenu} className='dS-none fC-white dS-flex-mQ cR-pt pd-0_5rem'>
         Ver categorías
       </p>
       <div className={`w-150px flex-col gap-1rem ${open ? 'catgMenu-mQ' : 'dS-none'} dS-none-mQ`}>
         <p onClick={()=> setOpen(false)} className='fC-coloVinoClarete dS-none dS-flex-mQ'>Ocultar</p>
         <p
-          className='fC-colorVino fC-white-mQ cR-pt'
+          className={`fC-white cR-pt navbar-red ${categoriaSeleccionada === null ? 'selected' : ''}`}
           onClick={() => {
             setCategoriaSeleccionada(null)
             setOpen(false)
           }}
         >
-          Mostrar todos
+          Mostrar todas
         </p>
         {
           categorias.map((categoria, i) => (
             <p
-              className='cR-pt fC-white-mQ fC-colorVino'
+              className={`cR-pt fC-white navbar-red ${getCategoriaClass(categoria)}`}
               key={i}
               onClick={() => {
                 setCategoriaSeleccionada(categoria)
                 setOpen(false)
-              }}>
+              }}
+            >
               {categoria}
             </p>
           ))

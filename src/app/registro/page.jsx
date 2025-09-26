@@ -5,8 +5,8 @@ import React, { useContext } from 'react'
 
 const Registro = () => {
 
-    const { 
-        email, setEmail, 
+    const {
+        email, setEmail,
         password, setPassword,
         message,
         username, setUsername,
@@ -19,8 +19,10 @@ const Registro = () => {
                 {message && <p>{message}</p>}
 
                 <div className='flex-row gap-0_5rem jC-spBtw w-100'>
-                    <label>Nickname:</label>
+                    <label htmlFor='nickname'>Nickname:</label>
                     <input
+                        id='nickname'
+                        name='nickname'
                         type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
@@ -28,8 +30,10 @@ const Registro = () => {
                     />
                 </div>
                 <div className='flex-row gap-0_5rem jC-spBtw w-100'>
-                    <label>Mail:</label>
+                    <label htmlFor='email'>Mail:</label>
                     <input
+                        id='email'
+                        name='email'
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -37,8 +41,10 @@ const Registro = () => {
                     />
                 </div>
                 <div className='flex-row gap-0_5rem jC-spBtw w-100'>
-                    <label>Contraseña:</label>
+                    <label htmlFor='pass'>Contraseña:</label>
                     <input
+                        name='pass'
+                        id='pass'
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

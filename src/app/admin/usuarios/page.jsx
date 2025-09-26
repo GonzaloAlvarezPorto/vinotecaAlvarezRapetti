@@ -24,17 +24,17 @@ const AdminUsuarios = () => {
       <div className='flex-col w-90-mQ gap-0_5rem jC-spBtw'>
         {usuarios.map((usuario, index) => (
           <div className='flex-col gap-1rem jC-spBtw bGc-grey pd-1rem' key={index}>
-            <span className='flex-row gap-1rem aI-center jC-spBtw'>
+            <span className='flex-row gap-1rem aI-start jC-spBtw'>
               <p>Email:</p>
-              <Link className='fC-white navbar-red wB-brAll' href={`/admin/usuarios/${usuario.id}`}>{usuario.email}</Link>
+              <Link className='fC-white navbar-red tA-end wB-brAll' href={`/admin/usuarios/${usuario.id}`}>{usuario.email}</Link>
             </span>
-            <span className='flex-row gap-1rem jC-spBtw aI-center'>
+            <span className='flex-row gap-1rem jC-spBtw aI-start'>
               <p>Nombre de usuario:</p>
-              <p>{usuario.username}</p>
+              <p className='tA-end'>{usuario.username}</p>
             </span>
-            <span className='flex-row gap-1rem jC-spBtw aI-center'>
+            <span className='flex-row gap-1rem jC-spBtw aI-start'>
               <p>Rol de usuario:</p>
-              <p>{usuario.role}</p>
+              <p className='tA-end'>{usuario.role}</p>
             </span>
           </div>
         ))

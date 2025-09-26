@@ -7,47 +7,30 @@ const AdminProductos = () => {
 
   const { productos } = useContext(VinotecaContext);
 
-  // Agrupar por categoría
-  const productosPorCategoria = productos.reduce((acc, prod) => {
-    if (!acc[prod.categoria]) {
-      acc[prod.categoria] = [];
-    }
-    acc[prod.categoria].push(prod);
-    return acc;
-  }, {});
-
-  // Ordenar categorías alfabéticamente
-  const categoriasOrdenadas = Object.keys(productosPorCategoria).sort((a, b) =>
-    a.localeCompare(b, 'es', { sensitivity: 'base' })
-  );
-
   return (
-    <div className='flex-col aI-center jC-center w-100 gap-1rem pdUD-0_5rem'>
-      <Link className='btn-form' href={'/admin/productos/crear'}>Crear nuevo producto</Link>
-      {categoriasOrdenadas.map((categoria) => {
-        // Ordenar productos dentro de la categoría
-        const productosOrdenados = productosPorCategoria[categoria].sort((a, b) =>
-          a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' })
-        );
-
-        return (
-          <div key={categoria} className='flex-col gap-1rem bGc-grey w-100 pdUD-0_5rem'>
-            <h3 className='fC-colorVino tA-center tD-under'>{categoria}</h3>
-            <div className='fichaProducto fichaProducto-mQ w-100 gap-1rem'>
-              {productosOrdenados.map((producto) => (
-                <div className='flex-col w-100 gap-1rem aI-center' key={producto.id}>
-                  <Link className='tA-center navbar-red fC-black w-100' href={`/admin/productos/${producto.id}`}>
-                    {producto.nombre}
-                  </Link>
-                </div>
-              ))}
+    <div className='flex-col w-100 aI-center gap-1rem jC-center pd-1rem'>
+      <div className='fichaProducto'>
+        {
+          productos.map((producto, index) => (
+            <div key={index} className='flex-col jC-spBtw bGc-grey gap-0_5rem w-100'>
+              <div className='flex-row bS-borBox jC-spBtw tA-center w-100 pd-0_5rem'>
+                <p>Producto:</p><Link href={`/admin/productos/${producto.id}`} className='w-100 wB-brWord fC-white navbar-red tA-end'>{producto.nombre}</Link>
+              </div>
+              <div className='flex-row bS-borBox jC-spBtw tA-center fC-black w-100 pd-0_5rem'>
+                <p>Precio:</p> 
+                <p className='w-100 tA-end'>${producto.precio}</p>
+              </div>
+              <div className='flex-row bS-borBox jC-spBtw tA-center fC-black w-100 pd-0_5rem'>
+                <p>Categoría:</p> 
+                <p className='w-100 tA-end'>{producto.categoria}</p>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          ))
+        }
+      </div>
       <Link className='btn-back' href={'/admin'}>Volver</Link>
     </div>
-  )
+  );
 }
 
 export default AdminProductos

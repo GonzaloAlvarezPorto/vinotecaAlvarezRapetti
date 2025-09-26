@@ -24,6 +24,14 @@
         padding: 0;
     }
 
+    .pd-1rem-mQ {
+        padding: 1rem;
+    }
+
+    .w-50-mQ{
+        width: 50%;
+    }
+
     .w-70-mQ{
         width: 70%;
     }
@@ -140,6 +148,7 @@
         background-color: var.$black-logo;
         width: 100%;
         box-sizing: border-box;
+        z-index: 999;
     }
 
     .flex-col-mQ {
@@ -152,11 +161,6 @@
 
     .bS-borBox-mQ {
         box-sizing: border-box;
-    }
-
-    .fichaProducto-mQ{
-        grid-template-columns: 1fr;
-        justify-items: center;
     }
 
     .border-none-mQ{

@@ -32,6 +32,36 @@ export const VinotecaProvider = ({ children }) => {
 
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
 
+    const [carrito, setCarrito] = useState([])
+
+    //CARRITO
+    const agregarAlCarrito = (producto, cantidad) => {
+        if (cantidad <= 0) return;
+
+        setCarrito(prev => {
+            const index = prev.findIndex(p => p.id === producto.id);
+
+            let nuevo;
+            if (index > -1) {
+                // sumamos la cantidad al producto existente
+                nuevo = prev.map(p =>
+                    p.id === producto.id ? { ...p, cantidad: p.cantidad + cantidad } : p
+                );
+            } else {
+                nuevo = [...prev, { ...producto, cantidad }];
+            }
+
+            localStorage.setItem('carrito', JSON.stringify(nuevo));
+            return nuevo;
+        });
+    };
+
+
+    useEffect(() => {
+        const storedCarrito = localStorage.getItem('carrito');
+        if (storedCarrito) setCarrito(JSON.parse(storedCarrito));
+    }, []);
+
     //MENU
     const openSubMenu = () => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -186,7 +216,8 @@ export const VinotecaProvider = ({ children }) => {
             colorear, setColorear, cambiarColorTexto,
             categoriaSeleccionada, setCategoriaSeleccionada,
             productosFiltrados,
-            productos, setProductos
+            productos, setProductos,
+            carrito, setCarrito, agregarAlCarrito
         }}>
             {children}
         </VinotecaContext.Provider>

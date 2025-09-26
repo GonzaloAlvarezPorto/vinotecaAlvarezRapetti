@@ -7,94 +7,106 @@ import React, { useEffect, useState } from 'react'
 const AdminUsuarioId = () => {
   const [usuario, setUsuario] = useState(null)
   const [editingField, setEditingField] = useState(null)
-  const [fieldValue, setFieldValue] = useState('')
+  const [formData, setFormData] = useState({})
   const params = useParams()
-
   const router = useRouter();
-  
+
   const fetchUsuario = async () => {
     try {
       const data = await getUsuarioById(params.usuarioId)
       setUsuario(data)
+      setFormData(data)
     } catch (error) {
       console.error("Error al traer al usuario", error)
     }
   }
-  
+
   useEffect(() => {
     fetchUsuario()
   }, [params.usuarioId])
 
-  const startEditing = (field) => {
-    setEditingField(field)
-    setFieldValue(usuario[field])
+  const handleChange = (e, key) => {
+    setFormData({ ...formData, [key]: e.target.value })
   }
 
-  const cancelEditing = () => {
-    setEditingField(null)
-    setFieldValue('')
-  }
-
-  const saveField = async () => {
+  const handleSave = async (key) => {
     try {
-      const updatedData = { ...usuario, [editingField]: fieldValue }
-      await updateUsuario(usuario.id, updatedData)
-      setUsuario(updatedData)
-      cancelEditing()
+      await updateUsuario(usuario.id, { [key]: formData[key] })
+      await fetchUsuario()
+      setEditingField(null)
     } catch (error) {
       console.error("Error al actualizar campo", error)
     }
   }
 
-  const handleDelete = async(e) => {
+  const handleDelete = async (e) => {
     e.preventDefault();
     const confirmDelete = window.confirm("¿Desea eliminar este usuario?");
-    if(!confirmDelete) return;
-    await deleteUsuario(params.usuarioId);
-    await fetchUsuario();
+    if (!confirmDelete) return;
+    await deleteUsuario(usuario.id);
     router.push('/admin/usuarios');
   }
 
-  if (!usuario) return <p>Cargando usuario...</p>
+  if (!usuario) return <p className='w-100 flex-row aI-center jC-center'>Cargando usuario...</p>
+
+  const primerMayuscula = (texto) => texto.charAt(0).toUpperCase() + texto.slice(1)
+
+  const inputIds = {}
+  Object.keys(formData).forEach((key, index) => {
+    inputIds[key] = `input-${key}-${index}` // genera un id único por campo
+  })
 
   return (
-    <div className='flex-col aI-center gap-1rem jC-center w-100'>
-      <div className='flex-col bGc-grey pd-1rem gap-1rem'>
-        {Object.entries(usuario)
-        .sort(([a], [b]) => a.localeCompare(b))
-        .map(([key, value]) => {
-          if (key === 'id' || key === 'password') return null // no mostramos id ni password
-
-          return (
-            <div key={key} className='flex-row aI-center bSB-black_1px pdUD-0_5rem jC-spBtw gap-1rem'>
-              <p>{key.charAt(0).toUpperCase() + key.slice(1)}:</p>
-
-              {editingField === key ? (
-                <>
-                  {key === 'role' ? (
-                    <select value={fieldValue} onChange={e => setFieldValue(e.target.value)}>
-                      <option value="user">user</option>
-                      <option value="admin">admin</option>
-                    </select>
+    <div className='flex-col aI-center gap-1rem jC-center w-100 pd-1rem'>
+      <div className='flex-col w-30 w-100-mQ gap-1rem'>
+        <div className="flex-col w-100 aI-center gap-0_2rem jC-center">
+          {Object.entries(formData)
+            .filter(([key]) => key !== 'id' && key !== 'password') // ocultar id y password
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([key, value]) => (
+              <div
+                key={key}
+                className='flex-col w-100 jC-spBtw pd-1rem bS-borBox gap-1rem bGc-grey aI-center'
+              >
+                <div className='flex-row fW-wR wB-brWord w-100 jC-spBtw'>
+                  <label htmlFor={formData.username}>{primerMayuscula(key)}:</label>
+                  {editingField === key ? (
+                    key === 'role' ? (
+                      <select
+                        id={formData.username}
+                        name={formData.username}
+                        value={formData[key]}
+                        onChange={(e) => handleChange(e, key)}
+                      >
+                        <option value="user">user</option>
+                        <option value="admin">admin</option>
+                      </select>
+                    ) : (
+                      <input
+                        id={formData.username}
+                        name={formData.username}
+                        type={key === 'email' ? 'email' : 'text'}
+                        value={formData[key]}
+                        onChange={(e) => handleChange(e, key)}
+                      />
+                    )
                   ) : (
-                    <input
-                      type={key === 'email' ? 'email' : 'text'}
-                      value={fieldValue}
-                      onChange={e => setFieldValue(e.target.value)}
-                    />
+                    <p className='tA-end w-50'>{value}</p>
                   )}
-                  <button onClick={saveField} className='btn-form'>Guardar</button>
-                  <button onClick={cancelEditing} className='btn-form'>❌</button>
-                </>
-              ) : (
-                <>
-                  <p className='w-100 tA-end'>{value}</p>
-                  <button onClick={() => startEditing(key)} className='btn-form'>Editar</button>
-                </>
-              )}
-            </div>
-          )
-        })}
+                </div>
+                <div className='flex-row w-100-mQ gap-1rem aI-center jC-center'>
+                  {editingField === key ? (
+                    <div className='flex-row w-100-mQ gap-1rem aI-center jC-center'>
+                      <button className='btn-form' onClick={() => handleSave(key)}>Guardar</button>
+                      <button className='btn-form' onClick={() => setEditingField(null)}>❌</button>
+                    </div>
+                  ) : (
+                    <button className='btn-form' onClick={() => setEditingField(key)}>Editar</button>
+                  )}
+                </div>
+              </div>
+            ))}
+        </div>
         <div className='flex-row w-100-mQ jC-center'>
           <button className='btn-form' onClick={handleDelete}>Borrar usuario</button>
         </div>
@@ -104,4 +116,4 @@ const AdminUsuarioId = () => {
   )
 }
 
-export default AdminUsuarioId
+export default AdminUsuarioId;
