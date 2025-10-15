@@ -13,10 +13,6 @@ const Admin = () => {
       texto:'Producto nuevo'
     },
     {
-      enlace:'/admin/pedidos',
-      texto:'Pedidos'
-    },
-    {
       enlace:'/admin/usuarios',
       texto:'Usuarios'
     }

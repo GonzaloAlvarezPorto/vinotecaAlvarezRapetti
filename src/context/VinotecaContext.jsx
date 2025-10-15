@@ -39,16 +39,17 @@ export const VinotecaProvider = ({ children }) => {
         if (cantidad <= 0) return;
 
         setCarrito(prev => {
-            const index = prev.findIndex(p => p.id === producto.id);
+            const carritoActual = Array.isArray(prev) ? prev : [];
+            const index = carritoActual.findIndex(p => p.id === producto.id);
 
             let nuevo;
             if (index > -1) {
                 // sumamos la cantidad al producto existente
-                nuevo = prev.map(p =>
+                nuevo = carritoActual.map(p =>
                     p.id === producto.id ? { ...p, cantidad: p.cantidad + cantidad } : p
                 );
             } else {
-                nuevo = [...prev, { ...producto, cantidad }];
+                nuevo = [...carritoActual, { ...producto, cantidad }];
             }
 
             localStorage.setItem('carrito', JSON.stringify(nuevo));
@@ -56,6 +57,13 @@ export const VinotecaProvider = ({ children }) => {
         });
     };
 
+    const actualizarCarrito = (callback) => {
+        setCarrito(prev => {
+            const actualizado = callback(prev);
+            localStorage.setItem("carrito", JSON.stringify(actualizado));
+            return actualizado;
+        });
+    };
 
     useEffect(() => {
         const storedCarrito = localStorage.getItem('carrito');
@@ -194,6 +202,12 @@ export const VinotecaProvider = ({ children }) => {
         }, 2500);
     }
 
+    const calcularTotal = () =>
+        Object.values(carrito).reduce((total, item) => total + item.precio * item.cantidad, 0);
+
+    const calcularTotalProductos = () =>
+        Object.values(carrito).reduce((total, item) => total + item.cantidad, 0);
+
     return (
         <VinotecaContext.Provider value={{
             productos,
@@ -217,7 +231,9 @@ export const VinotecaProvider = ({ children }) => {
             categoriaSeleccionada, setCategoriaSeleccionada,
             productosFiltrados,
             productos, setProductos,
-            carrito, setCarrito, agregarAlCarrito
+            carrito, setCarrito, agregarAlCarrito,
+            calcularTotal, calcularTotalProductos,
+            actualizarCarrito
         }}>
             {children}
         </VinotecaContext.Provider>

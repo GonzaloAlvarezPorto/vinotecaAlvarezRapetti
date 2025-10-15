@@ -46,6 +46,10 @@
     height: 150px;
 }
 
+.h-300px{
+    height: 300px;
+}
+
 .h-350px {
     height: 350px;
 }
@@ -473,6 +477,10 @@
     font-weight: bold;
 }
 
+.fW-700{
+    font-weight: 700;
+}
+
 // border-radius
 .bR-15px {
     border-radius: 15px;
@@ -681,6 +689,7 @@
 .selected{
     color: var.$doradoHero;
 }
+
 .historias {
     font-family: 'Lato', sans-serif;
     color: #111;
@@ -702,7 +711,7 @@
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
-    z-index: 998;
+    z-index: 999;
     -webkit-mask-image: linear-gradient(90deg, transparent 0, var.$colorVino 50%, #000000 100%);
     mask-image: linear-gradient(90deg, transparent 0, var.$colorVino 50%, #000 100%);
     width: 100%;
@@ -710,10 +719,12 @@
 
 .heroSize {
     min-height: calc(100vh - 80px - 90px);
+    z-index: 1000;
 }
 
 .heroSize-home {
     @extend .heroSize;
+    z-index: 999;
 }
 
 .heroImage:not(:first-child) {

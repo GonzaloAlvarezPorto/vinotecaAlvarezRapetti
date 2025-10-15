@@ -29,12 +29,6 @@ const NavBar = () => {
       ruta: "/nosotros",
       submenu: false,
       closeInstant: true,
-    },
-    {
-      nombre: "🛒",
-      ruta: "/carrito",
-      submenu: false,
-      closeInstant: true,
     }
   ];
 
